@@ -42,13 +42,13 @@ result = result:gsub(" ", "\b")
 result = result:gsub("|", "\r")
 
 -- Literally The Same Thing
-result = result:gsub("a", "\u{0227}")
-result = result:gsub("f", "\u{0066}\u{030A}")
-result = result:gsub("F", "F\u{030A}")
-result = result:gsub("P", "P\u{030A}")
-result = result:gsub("p", "ṗ")
+result = result:gsub("a", "a\u{0307}")
+result = result:gsub("f", "f\u{030A}")
+result = result:gsub("F", "F\u{0307}")
+result = result:gsub("P", "P\u{0307}")
+result = result:gsub("p", "p\u{0307}")
 result = result:gsub("e", "\u{0117}")
-result = result:gsub("o", "\u{022F}")
+result = result:gsub("o", "ȯ")
 result = result:gsub("u", "\u{1EE5}")
 
 -- sapnu puas
