@@ -48,7 +48,7 @@ result = result:gsub("F", "F\u{0307}")
 result = result:gsub("P", "P\u{0307}")
 result = result:gsub("p", "p\u{0307}")
 result = result:gsub("e", "\u{0117}")
-result = result:gsub("o", "ȯ")
+
 result = result:gsub("u", "\u{1EE5}")
 
 -- sapnu puas
