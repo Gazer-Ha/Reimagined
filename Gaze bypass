@@ -17,22 +17,65 @@ else
 Notempty = false
 end
   
-local NUMBER,IDK,A_1,A_2 ,TextChatService,DefaultChat
-NUMBER = { ["0"] = "\xEF\xBC\x90", ["1"] = "\xEF\xBC\x91", ["2"] = "\xEF\xBC\x92", ["3"] = "\xEF\xBC\x93", ["4"] = "\xEF\xBC\x94", ["5"] = "\xEF\xBC\x95", ["6"] = "\xEF\xBC\x96", ["7"] = "\xEF\xBC\x97", ["8"] = "\xEF\xBC\x98", ["9"] = "\xEF\xBC\x99" }
+
+local NUMBER, WORDS, IDK, A_1, A_2, TextChatService, DefaultChat
+NUMBER = {
+    ["0"] = "\xEF\xBC\x90",
+    ["1"] = "\xEF\xBC\x91",
+    ["2"] = "\xEF\xBC\x92",
+    ["3"] = "\xEF\xBC\x93",
+    ["4"] = "\xEF\xBC\x94",
+    ["5"] = "\xEF\xBC\x95",
+    ["6"] = "\xEF\xBC\x96",
+    ["7"] = "\xEF\xBC\x97",
+    ["8"] = "\xEF\xBC\x98",
+    ["9"] = "\xEF\xBC\x99"
+}
+
+-- Its uhh 1:21 AM and i dont have school tomorrow but i feel so sleepy rn
+-- so imma sleep.. its january 11 - 2025
+-- dont forget... to update...  it.. later..... swoon~
+WORDS = {
+    ["asshole"] = "asṡhȯle",
+    ["slut"] = "slụt",
+    ["shit"] = "shɨt",
+    ["bitch"] = "bɨtch",
+    ["porn"] = "ṗorn",
+    ["booty"] = "bȯoty",
+    ["negro"] = "nėgrȯ",
+    ["fuck"] = "ḟụck",
+    ["onlyfan"] = "ȯnlyfȧn",
+    ["only fan"] = "ȯnly fȧn",
+    ["cock"] = "cȯck",
+    ["damn"] = "dȧmn",
+    ["dildo"] = "dɨldȯ",
+    ["bollock"] = "bollȯck",
+    ["https"] = "httṗs",
+    ["hentai"] = "hentȧɨ",
+}
+
 if CAPS then
-IDK = input:upper()
+    IDK = input:upper()
 else
-IDK = input:lower()
+    IDK = input:lower()
 end
-local result = IDK:gsub("%d", 
-function(digit)
-return NUMBER[digit] or digit
+
+
+for word, swearWord in pairs(WORDS) do
+    IDK = IDK:gsub(word, swearWord)
+end
+
+
+IDK = IDK:gsub("%d", function(digit)
+    return NUMBER[digit] or digit
 end)
+
+
+local result = IDK
 TextChatService = game:GetService("TextChatService"):FindFirstChild("TextChannels")
 
 if game.PlaceId == 4483381587 then
-result = result:gsub("i", "\u{0268}")
-result = result:gsub("I", "I\u{030A}")
+result = result:gsub("I", "İ")
 else
 result = result:gsub("i", "\u{0131}\u{0307}")
 result = result:gsub("I", "I\u{030A}")
@@ -42,14 +85,10 @@ result = result:gsub(" ", "\b")
 result = result:gsub("|", "\r")
 
 -- Literally The Same Thing
-result = result:gsub("a", "a\u{0307}")
-result = result:gsub("f", "f\u{030A}")
-result = result:gsub("F", "F\u{0307}")
-result = result:gsub("P", "P\u{0307}")
-result = result:gsub("p", "p\u{0307}")
-result = result:gsub("e", "\u{0117}")
 
-result = result:gsub("u", "\u{1EE5}")
+
+
+
 
 -- sapnu puas
 if Notempty then
