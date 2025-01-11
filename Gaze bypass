@@ -32,18 +32,17 @@ NUMBER = {
     ["9"] = "\xEF\xBC\x99"
 }
 
--- Its uhh 1:21 AM and i dont have school tomorrow but i feel so sleepy rn
--- so imma sleep.. its january 11 - 2025
--- dont forget... to update...  it.. later..... swoon~
+
 WORDS = {
-    ["asshole"] = "asṡhȯle",
+    ["ass"] = "asṡ",
+    ["hole"] = "hȯle",
     ["slut"] = "slụt",
     ["shit"] = "shɨt",
     ["bitch"] = "bɨtch",
-    ["porn"] = "ṗorn",
+    ["porn"] = "pȯrn",
     ["booty"] = "bȯoty",
     ["negro"] = "nėgrȯ",
-    ["fuck"] = "ḟụck",
+    ["fuck"] = "fụck",
     ["onlyfan"] = "ȯnlyfȧn",
     ["only fan"] = "ȯnly fȧn",
     ["cock"] = "cȯck",
@@ -52,6 +51,13 @@ WORDS = {
     ["bollock"] = "bollȯck",
     ["https"] = "httṗs",
     ["hentai"] = "hentȧɨ",
+    ["nigg"] = "nɨgg",
+    ["flirt"] = "fliṙt",
+    ["pussy"] = "pụṡsy",
+    ["dick"] = "dɨck",
+    ["xvideos"] = "ẋvideos",
+    ["xxx"] = "ẋẋx",
+    
 }
 
 if CAPS then
@@ -74,9 +80,7 @@ end)
 local result = IDK
 TextChatService = game:GetService("TextChatService"):FindFirstChild("TextChannels")
 
-if game.PlaceId == 4483381587 then
-result = result:gsub("I", "İ")
-else
+if game.PlaceId ~= 4483381587 then
 result = result:gsub("i", "\u{0131}\u{0307}")
 result = result:gsub("I", "I\u{030A}")
 end
@@ -92,7 +96,9 @@ result = result:gsub("|", "\r")
 
 -- sapnu puas
 if Notempty then
- A_1 = "\u{A671}>\b" .. result
+ math.randomseed(os.time())  
+local rc = math.random(2)  
+ A_1= (rc == 1 and ">\b" or "<\b") .. result .. (rc == 1 and "\b<" or "\b>")
  A_2 = "All"
     if TextChatService then
         game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(A_1)
