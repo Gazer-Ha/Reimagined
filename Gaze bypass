@@ -65,7 +65,7 @@ WORDS = {
     ["sex"] = "ṡeẋ",
     ["penis"] = "ṗenis",
     ["phil"] = "ṗhɨl",
-    ["pedo"= "ṗedo",
+    ["pedo"] = "ṗedo",
     ["ASS"] = "ASṠ",  
     ["BANG"] = "BȦNG",
     ["HOLE"] = "HȮLE",  
@@ -98,8 +98,7 @@ WORDS = {
     ["PENIS"] = "ṖENIS",  
     ["PHIL"] = "ṖHỊL",  
     ["PEDO"] = "ṖEDO"  
-
-    
+   
 }
 
 if CAPS then
