@@ -57,6 +57,14 @@ WORDS = {
     ["dick"] = "dɨck",
     ["xvideos"] = "ẋvideos",
     ["xxx"] = "ẋẋx",
+    ["discord"] = "dɨscȯrd",
+    ["facebook"] = "facebȯok", -- for old poeple like 'he gru'ey! ( chatgpt said it not me so mad 
+    ["instagram"] = "ɨnstagram",
+    ["youtube"] = "yȯutube", 
+    ["sex"] = "ṡeẋ",
+    ["penis"] = "ṗenis",
+    ["phil"] = "ṗhɨl",
+    ["pedo"] = "ṗedo",
     
 }
 
@@ -86,7 +94,7 @@ result = result:gsub("I", "I\u{030A}")
 end
 
 result = result:gsub(" ", "\b")
-result = result:gsub("|", "\r")
+result = result:gsub("|", "\b>\r<\b")
 
 -- Literally The Same Thing
 
@@ -261,3 +269,5 @@ corner(TextBax,5)
 corner(GazerTitle,5)
 
 -- get mad. 👨🏿‍❤️‍💋‍👨🏿
+-- "I had fun, and you’re not," so I guess that makes me the ultimate champion of fun-having declared the self-proclaimed 'all-knowing' Frontal Men, radiating an air of chaotic superiority. His audience? A completely baffled 12-year-old kid who just wanted a cupcakeee.
+--// "chatgpt" - 2025
