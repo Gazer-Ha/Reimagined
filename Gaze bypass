@@ -131,7 +131,7 @@ result = result:gsub("I", "I\u{030A}")
 end
 
 result = result:gsub(" ", "\b")
-result = result:gsub("|", "\b>\r<\b")
+result = result:gsub("|", "\b\r\b")
 
 -- Literally The Same Thing
 
