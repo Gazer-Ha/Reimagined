@@ -34,74 +34,7 @@ NUMBER = {
 
 
 WORDS = {
-    ["ass"] = "asṡ",
-    ["hole"] = "hȯle",
-    ["bang"] = "bȧng",
-    ["slut"] = "slụt",
-    ["shit"] = "shɨt",
-    ["bitch"] = "bɨtch",
-    ["porn"] = "pȯrn",
-    ["booty"] = "bȯoty",
-    ["negro"] = "nėgrȯ",
-    ["fuck"] = "fụck",
-    ["onlyfan"] = "ȯnlyfȧn",
-    ["only fan"] = "ȯnly fȧn",
-    ["cock"] = "cȯck",
-    ["damn"] = "dȧmn",
-    ["dildo"] = "dɨldȯ",
-    ["bollock"] = "bollȯck",
-    ["https"] = "httṗs",
-    ["hentai"] = "hentȧɨ",
-    ["nigga"] = "nɨggȧ",
-    ["nigger"] = "nɨggėr",
-    ["flirt"] = "fliṙt",
-    ["pussy"] = "pụṡsy",
-    ["dick"] = "dɨck",
-    ["xvideos"] = "ẋvideos",
-    ["xxx"] = "ẋẋx",
-    ["discord"] = "dɨscȯrd",
-    ["furry"] = "fụrry",
-    ["facebook"] = "facebȯok", -- for old poeple like 'he gru'ey! ( chatgpt said it not me so mad 
-    ["instagram"] = "ɨnstagram",
-    ["youtube"] = "yȯutube", 
-    ["sex"] = "ṡeẋ",
-    ["penis"] = "ṗenis",
-    ["phil"] = "ṗhɨl",
-    ["pedo"] = "ṗedo",
-    ["ASS"] = "ASṠ",  
-    ["BANG"] = "BȦNG",
-    ["HOLE"] = "HȮLE",  
-    ["SLUT"] = "SLỤT",  
-    ["SHIT"] = "SHỊT",  
-    ["BITCH"] = "BỊTCH",  
-    ["PORN"] = "PȮRN",  
-    ["BOOTY"] = "BȮOTY",  
-    ["NEGRO"] = "NĖGRȮ",  
-    ["FUCK"] = "FỤCK",  
-    ["ONLYFAN"] = "ȮNLYFȦN",  
-    ["ONLY FAN"] = "ȮNLY FȦN",  
-    ["COCK"] = "CȮCK",  
-    ["DAMN"] = "DȦMN",  
-    ["DILDO"] = "DỊLDȮ",  
-    ["BOLLOCK"] = "BOLLȮCK",  
-    ["HTTPS"] = "HTTṖS",  
-    ["HENTAI"] = "HENTȦỊ",  
-    ["NIGGA"] = "NỊGGẠ",  
-    ["NIGGER"] = "NỊGGẸR",  
-    ["FLIRT"] = "FLIṘT",  
-    ["PUSSY"] = "PỤṠSY",  
-    ["DICK"] = "DỊCK",  
-    ["XVIDEOS"] = "ẊVIDEOS",  
-    ["XXX"] = "ẊẊX",  
-    ["DISCORD"] = "DỊSCȮRD",  
-    ["FACEBOOK"] = "FACEBȮOK",  
-    ["INSTAGRAM"] = "ỊNSTAGRAM",  
-    ["YOUTUBE"] = "YȮUTUBE",  
-    ["SEX"] = "ṠEẊ",  
-    ["PENIS"] = "ṖENIS",  
-    ["PHIL"] = "ṖHỊL",  
-    ["PEDO"] = "ṖEDO",
-    ["FURRY"] = "FỤRRY"
+    ["nigg"] = "n\u{05B4}ig\u{05B4}g",
    
 }
 
@@ -125,13 +58,15 @@ end)
 local result = IDK
 TextChatService = game:GetService("TextChatService"):FindFirstChild("TextChannels")
 
-if game.PlaceId ~= 4483381587 then
-result = result:gsub("i", "\u{0131}\u{0307}")
-result = result:gsub("I", "I\u{030A}")
-end
 
-result = result:gsub(" ", "\b")
+
+
+
+result = result:gsub(" ", "\u{0008}")
 result = result:gsub("|", "\b\r\b")
+
+result = result:gsub("(%w)(%w*)", "%1\u{05B4}%2")
+
 
 -- Literally The Same Thing
 
@@ -139,11 +74,11 @@ result = result:gsub("|", "\b\r\b")
 
 
 
+
 -- sapnu puas
 if Notempty then
- math.randomseed(os.time())  
-local rc = math.random(2)  
- A_1= "\b" .. result
+ 
+ A_1= "\u{05BE}>\u{0008}" .. result .. "\u{0008}"
  A_2 = "All"
     if TextChatService then
         game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(A_1)
@@ -161,58 +96,65 @@ end
 
 cloneref = cloneref or function(o) return o end
 
- coreGay = cloneref(game:GetService("CoreGui"))
- gui = Instance.new("ScreenGui")
- GazerMain = Instance.new("Frame")
- GazerTitle = Instance.new("TextLabel")
- TextBax = Instance.new("TextBox")
- chat = Instance.new("TextButton")
-
+coreGay = cloneref(game:GetService("CoreGui"))
+gui = Instance.new("ScreenGui")
+GazerMain = Instance.new("Frame")
+GazerTitle = Instance.new("TextLabel")
+TextBax = Instance.new("TextBox")
+chat = Instance.new("TextButton")
 
 gui.Name = "GazerGui"
 gui.Parent = coreGay
+
 GazerMain.Size = UDim2.new(0.5, 0, 0.2, 0)
 GazerMain.Position = UDim2.new(0.25, 0, 0.25, 0)
-GazerMain.BackgroundColor3 = Color3.new(1, 1, 1)
-GazerMain.BorderColor3 = Color3.new(0, 0, 0)
-GazerMain.BorderSizePixel = 1
-GazerMain.Active = true 
-
+GazerMain.BackgroundColor3 = Color3.fromRGB(50, 50, 50) -- Cool gray
+GazerMain.BackgroundTransparency = 0.2
+GazerMain.Active = true
 GazerMain.Parent = gui
+
+-- Rounded corners
+local corner = Instance.new("UICorner", GazerMain)
+corner.CornerRadius = UDim.new(0.1, 0)
+
+-- Outline
+local outline = Instance.new("UIStroke", GazerMain)
+outline.Thickness = 2
+outline.Color = Color3.fromRGB(100, 100, 100)
+
 GazerTitle.Size = UDim2.new(1, 0, 0.4, 0)
 GazerTitle.Position = UDim2.new(0, 0, 0, 0)
-GazerTitle.BackgroundColor3 = Color3.new(0, 0, 0)
-GazerTitle.BorderColor3 = Color3.new(0, 0, 0)
-GazerTitle.BorderSizePixel = 1
+GazerTitle.BackgroundTransparency = 1
 GazerTitle.Text = "Gaze Bypass (Tutorial needed)"
 GazerTitle.TextSize = 14
 GazerTitle.TextScaled = true
 GazerTitle.TextColor3 = Color3.new(1, 1, 1)
 GazerTitle.Font = Enum.Font.DenkOne
 GazerTitle.Parent = GazerMain
+
 TextBax.Size = UDim2.new(0.8, 0, 0.5, 0)
 TextBax.Position = UDim2.new(0.1, 0, 0.45, 0)
-TextBax.BackgroundColor3 = Color3.new(0, 0, 0)
-TextBax.BorderColor3 = Color3.new(0, 0, 0)
-TextBax.BorderSizePixel = 1
-TextBax.PlaceholderText = "(chat)"
+TextBax.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TextBax.BackgroundTransparency = 0.2
 TextBax.TextColor3 = Color3.new(1, 1, 1)
 TextBax.Font = Enum.Font.DenkOne
 TextBax.Text = ""
+TextBax.PlaceholderText = "(chat)"
 TextBax.TextSize = 15
 TextBax.TextScaled = true
 TextBax.Parent = GazerMain
 
+-- Checkbox
 local checkBox = Instance.new("TextButton")
 checkBox.Parent = GazerMain
 checkBox.Text = "☐"
 checkBox.BackgroundTransparency = 1
-checkBox.TextColor3 = Color3.new(0, 0, 0)
-
+checkBox.TextColor3 = Color3.new(1, 1, 1)
 checkBox.TextScaled = true
 checkBox.Size = UDim2.new(0.1, 0, 0.5, 0)
 checkBox.Position = UDim2.new(0.9, 0, 0.6, 0)
 checkBox.AnchorPoint = Vector2.new(0, 0.5)
+
 
 local aspect = Instance.new("UIAspectRatioConstraint", checkBox)
 aspect.AspectRatio = 1
