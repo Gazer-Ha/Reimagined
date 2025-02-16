@@ -34,7 +34,7 @@ NUMBER = {
 
 
 WORDS = {
-    ["nigg"] = "n\u{05B4}ig\u{05B4}g",
+    ["nigg"] = "n\u{061A}ig\u{061A}g",
    
 }
 
@@ -65,7 +65,7 @@ TextChatService = game:GetService("TextChatService"):FindFirstChild("TextChannel
 result = result:gsub(" ", "\u{0008}")
 result = result:gsub("|", "\b\r\b")
 
-result = result:gsub("(%w)(%w*)", "%1\u{05B4}%2")
+result = result:gsub("(%w)(%w*)", "%1\u{061A}%2")
 
 
 -- Literally The Same Thing
