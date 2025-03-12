@@ -34,7 +34,8 @@ NUMBER = {
 
 
 WORDS = {
-    ["nigg"] = "n\u{061A}ig\u{061A}g",
+    ["nigg"] = "n\u{061A}ig\u{061A}g\u{0618}",
+    ["nhentai"] = "n\u{061A}he\u{061A}ntai",
    
 }
 
@@ -65,7 +66,15 @@ TextChatService = game:GetService("TextChatService"):FindFirstChild("TextChannel
 result = result:gsub(" ", "\u{0008}")
 result = result:gsub("|", "\b\r\b")
 
-result = result:gsub("(%w)(%w*)", "%1\u{061A}%2")
+math.randomseed(tick()) -- Seed random generator
+
+result = result:gsub("(%w)(%w*)", function(first, rest)
+    if math.random() < 0.5 then -- 50% chance to insert \u{0618}
+        return first .. "\u{0618}" .. rest
+    else
+        return first .."\u{061A}" .. rest
+    end
+end)
 
 
 -- Literally The Same Thing
@@ -78,7 +87,7 @@ result = result:gsub("(%w)(%w*)", "%1\u{061A}%2")
 -- sapnu puas
 if Notempty then
  
- A_1= "\u{05BE}>\u{0008}" .. result .. "\u{0008}"
+ A_1= "\u{05BE}>ˑ\u{0008}" .. result .. "ˑ\u{0008}"
  A_2 = "All"
     if TextChatService then
         game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(A_1)
