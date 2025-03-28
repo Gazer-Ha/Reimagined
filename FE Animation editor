@@ -428,7 +428,6 @@ Werewolf = {"1083195517", "1083214717"},
 Zombie = {"616158929", "616160636"},
     },
     Walk = {
-["2016 Animation (mm2)"] = "387947975",
 Astronaut = "891667138",
 Bold = "16738340646",
 Bubbly = "910034870",
@@ -452,7 +451,7 @@ Popstar = "1212980338",
 Princess = "941028902",
 R6 = "12518152696",
 ["R15 Reanimated"] = "4211223236",
-["2016 Animation (mm2)"] = "4211223236",
+["2016 Animation (mm2)"] = "387947975",
 Robot = "616095330",
 Sneaky = "1132510133",
 ["Sports (Adidas)"] = "18537392113",
@@ -492,7 +491,6 @@ Pirate = "750783738",
 ["Default Retarget"] = "102294264237491",
 Popstar = "1212980348",
 Princess = "941015281",
-["2016 Animation (mm2)"] = "4211220381",
 R6 = "12518152696",
 ["R15 Reanimated"] = "4211220381",
 Robot = "10921250460",
@@ -1403,5 +1401,5 @@ Notify("PLEASE", "Donate me, im poor :(", 1)
 local lt = os.clock() - st
 Notify("loaded", string.format("in %.3f seconds.", lt), 5)
 
-Notify("Changelog", "added 'Sway', And 'Very Long' Idle", 30)
+Notify("Changelog", "added 'Sway', And \n'Very Long' Idle", 30)
 
