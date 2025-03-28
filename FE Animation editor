@@ -1266,49 +1266,49 @@ createTheButton(text .. " - " .. animationType , function()
 
 
 for name, ids in pairs(Animations.Idle) do
-task.wait((1/5) * game:GetService("RunService").RenderStepped:Wait())
+task.wait((1/3) * game:GetService("RunService").RenderStepped:Wait())
     createButton(Idle, name, "Idle", ids)
   
 end
 
 for name, id in pairs(Animations.Walk) do
-task.wait((1/5) * game:GetService("RunService").RenderStepped:Wait())
+task.wait((1/3) * game:GetService("RunService").RenderStepped:Wait())
     createButton(Walk, name, "Walk", id)
    
 end
 
 for name, id in pairs(Animations.Run) do
-task.wait((1/5) * game:GetService("RunService").RenderStepped:Wait())
+task.wait((1/3) * game:GetService("RunService").RenderStepped:Wait())
     createButton(Run, name, "Run", id)
     
 end
 
 for name, id in pairs(Animations.Jump) do
-task.wait((1/5) * game:GetService("RunService").RenderStepped:Wait())
+task.wait((1/3) * game:GetService("RunService").RenderStepped:Wait())
     createButton(Jump, name, "Jump", id)
    
 end
 
 for name, id in pairs(Animations.Fall) do
-task.wait((1/5) * game:GetService("RunService").RenderStepped:Wait())
+task.wait((1/3) * game:GetService("RunService").RenderStepped:Wait())
     createButton(Fall, name, "Fall", id)
  
 end
 
 for name, id in pairs(Animations.SwimIdle) do
-task.wait((1/5) * game:GetService("RunService").RenderStepped:Wait())
+task.wait((1/3) * game:GetService("RunService").RenderStepped:Wait())
     createButton(SwimIdle, name, "SwimIdle", id)
 
 end
 
 for name, id in pairs(Animations.Swim) do
-task.wait((1/5) * game:GetService("RunService").RenderStepped:Wait())
+task.wait((1/3) * game:GetService("RunService").RenderStepped:Wait())
     createButton(Swim, name, "Swim", id)
 
 end
 
 for name, id in pairs(Animations.Climb) do
-task.wait((1/5) * game:GetService("RunService").RenderStepped:Wait())
+task.wait((1/3) * game:GetService("RunService").RenderStepped:Wait())
     createButton(Climb, name, "Climb", id)
     
 end
