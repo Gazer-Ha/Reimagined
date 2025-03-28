@@ -383,7 +383,7 @@ task.wait()
 -- Define the animations table with animation IDs
 local Animations = {
     Idle = {
-    
+["2016 Animation (mm2)"] = {"387947158", "387947464"},
 Astronaut = {"891621366", "891633237"},
 Bold = {"16738333868", "16738334710"},
 Borock = {"3293641938", "3293642554"},
