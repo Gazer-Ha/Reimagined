@@ -38,7 +38,6 @@ function Notify(titletxt, text, time)
         title.Font = Enum.Font.GothamBold
         title.Text = titletxt
         title.TextColor3 = Color3.new(1, 1, 1)
-        title.TextSize = 25
         title.TextScaled = true
 
         message.BackgroundColor3 = Color3.new(0, 0, 0)
@@ -48,7 +47,6 @@ function Notify(titletxt, text, time)
         message.Font = Enum.Font.Gotham
         message.Text = text
         message.TextColor3 = Color3.new(1, 1, 1)
-        message.TextSize = 15
         message.TextScaled = true
 
         local offset = 50
