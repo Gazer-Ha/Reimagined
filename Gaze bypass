@@ -68,30 +68,23 @@ result = result:gsub("|", "\b\r\b")
 
 math.randomseed(tick()) -- Seed random generator
 
-local diacritics = { "\u{0618}", "\u{0619}", "\u{061A}", "\u{064B}", "\u{064C}", "\u{064D}" }
+local function addDiacritics(input)
+    if #input < 3 then return input end  -- Skip if too short
 
-result = result:gsub("(%w)(%w*)", function(first, rest)
-    -- 70% chance to modify the word
-    if math.random() < 0.7 then
-        -- Choose a random diacritic from the list
-        local diacritic1 = diacritics[math.random(#diacritics)]
-        local diacritic2 = diacritics[math.random(#diacritics)]
-        
-        -- 50% chance to apply to first character, 30% to middle, 20% to both
-        local mode = math.random()
-        if mode < 0.5 then
-            return first .. diacritic1 .. rest
-        elseif mode < 0.8 and #rest > 1 then
-            local mid = math.random(2, #rest)
-            return first .. rest:sub(1, mid-1) .. diacritic2 .. rest:sub(mid)
+    local result = {}
+    for i = 1, #input do
+        local char = input:sub(i, i)
+        if i == 1 or i == #input or math.random() < 0.5 then
+            table.insert(result, char) -- Leave as-is
         else
-            return first .. diacritic1 .. rest .. diacritic2
+            local diacritic = math.random() < 0.5 and "\u{0618}" or "\u{061A}"
+            table.insert(result, char .. diacritic)
         end
-    else
-        return first .. rest
     end
-end)
+    return table.concat(result)
+end
 
+result = addDiacritics(result)
 
 -- Literally The Same Thing
 
