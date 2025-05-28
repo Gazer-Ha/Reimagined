@@ -68,11 +68,27 @@ result = result:gsub("|", "\b\r\b")
 
 math.randomseed(tick()) -- Seed random generator
 
+local diacritics = { "\u{0618}", "\u{0619}", "\u{061A}", "\u{064B}", "\u{064C}", "\u{064D}" }
+
 result = result:gsub("(%w)(%w*)", function(first, rest)
-    if math.random() < 0.5 then -- 50% chance to insert \u{0618}
-        return first .. "\u{0618}" .. rest
+    -- 70% chance to modify the word
+    if math.random() < 0.7 then
+        -- Choose a random diacritic from the list
+        local diacritic1 = diacritics[math.random(#diacritics)]
+        local diacritic2 = diacritics[math.random(#diacritics)]
+        
+        -- 50% chance to apply to first character, 30% to middle, 20% to both
+        local mode = math.random()
+        if mode < 0.5 then
+            return first .. diacritic1 .. rest
+        elseif mode < 0.8 and #rest > 1 then
+            local mid = math.random(2, #rest)
+            return first .. rest:sub(1, mid-1) .. diacritic2 .. rest:sub(mid)
+        else
+            return first .. diacritic1 .. rest .. diacritic2
+        end
     else
-        return first .."\u{061A}" .. rest
+        return first .. rest
     end
 end)
 
