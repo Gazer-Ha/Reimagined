@@ -80,7 +80,7 @@ if Notempty then
  A_1= result
  A_2 = "All"
     if TextChatService then
-        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(A_1)
+        A_1= "\u{05BE}>ˑ\u{0008}" .. result .. "ˑ\u{0008}"
     else
         game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer( A_1, A_2)
     end
