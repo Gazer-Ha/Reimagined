@@ -102,7 +102,7 @@ GazerTitle = Instance.new("TextLabel")
 TextBax = Instance.new("TextBox")
 chat = Instance.new("TextButton")
 
-gui.Name = "GazerGui"
+gui.Name = "GazerGai"
 gui.Parent = coreGay
 
 GazerMain.Size = UDim2.new(0.5, 0, 0.2, 0)
@@ -124,7 +124,7 @@ outline.Color = Color3.fromRGB(100, 100, 100)
 GazerTitle.Size = UDim2.new(1, 0, 0.4, 0)
 GazerTitle.Position = UDim2.new(0, 0, 0, 0)
 GazerTitle.BackgroundTransparency = 1
-GazerTitle.Text = "Gaze Bypass (Tutorial needed)"
+GazerTitle.Text = "ChatBox (No Ban)"
 GazerTitle.TextSize = 14
 GazerTitle.TextScaled = true
 GazerTitle.TextColor3 = Color3.new(1, 1, 1)
@@ -138,7 +138,7 @@ TextBax.BackgroundTransparency = 0.2
 TextBax.TextColor3 = Color3.new(1, 1, 1)
 TextBax.Font = Enum.Font.DenkOne
 TextBax.Text = ""
-TextBax.PlaceholderText = "(chat)"
+TextBax.PlaceholderText = "(Input chat)"
 TextBax.TextSize = 15
 TextBax.TextScaled = true
 TextBax.Parent = GazerMain
