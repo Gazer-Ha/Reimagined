@@ -34,8 +34,8 @@ NUMBER = {
 
 
 WORDS = {
-    ["nigg"] = "n\u{061A}ig\u{061A}g\u{0618}",
-    ["nhentai"] = "n\u{061A}he\u{061A}ntai",
+    ["nigg"] = "n.igg",
+    ["nhentai"] = "n.he..ntai",
    
 }
 
