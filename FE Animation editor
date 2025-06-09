@@ -1401,5 +1401,5 @@ Notify("PLEASE", "Donate me, im poor :(", 1)
 local lt = os.clock() - st
 Notify("loaded", string.format("in %.3f seconds.", lt), 5)
 
-Notify("Changelog", "added 'Sway', And \n'Very Long' Idle", 30)
+Notify("Changelog", "added 'Adidas Community',\n And Renamed adidas to 'Sports'", 30)
 end)
