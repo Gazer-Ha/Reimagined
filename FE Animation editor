@@ -112,20 +112,20 @@ print("Running Script, May Lags A Bit")
 local TweenService = game:GetService("TweenService")
 local camera = workspace.CurrentCamera -- Get the camera for viewport size
 
-
+-- Function to get dynamic sizes based on screen size
 local function getScaledSize(relativeWidth, relativeHeight)
     local viewportSize = camera.ViewportSize
     return UDim2.new(0, viewportSize.X * relativeWidth, 0, viewportSize.Y * relativeHeight)
 end
 
-
+-- Create ScreenGui
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "DraggableGui"
 screenGui.Parent = game.CoreGui
 
 
 
-
+-- Create Frame (Menu)
 local frame = Instance.new("TextButton")
 frame.Name = "GazeBro"
 frame.Text = ""
@@ -723,6 +723,13 @@ end
 
 
 local HttpService = game:GetService("HttpService")
+
+-- Save the last animations to a file
+
+
+-- Call this function whenever `lastAnimations` is updated
+
+
 
 local function Buy(gamePassID)
     local MarketplaceService = game:GetService("MarketplaceService")
@@ -1394,34 +1401,5 @@ Notify("PLEASE", "Donate me, im poor :(", 1)
 local lt = os.clock() - st
 Notify("loaded", string.format("in %.3f seconds.", lt), 5)
 
-Notify("Changelog", "added 'Adidas Community',\n And Yeah thanks for using ig?", 30)
+Notify("Changelog", "added 'Adidas Community'", 30)
 end)
-
-
-Sure! Here's a friendly and polished thank-you letter you can include with your animation script:
-
-
---[[
-        Thank You for Using This Animation Script!
-
-Hey.
-Thanks a ton for checking out and using this animation script..
-I guess Whether youre tweaking it for a game, learning from it, or just experimenting?
-
- I really appreciate your interest. 
- 
-I put effort into making the script FE, Simple, and easy to work with.
---Of course with help of chatgpt.. im not that good.
-
-Whatever. I hope it helps bring your project to life.
-If you have any feedback, improvements, or cool stuff you’ve made with it, 
-I’d love to hear about it. 
-
-Keep creating, keep experimenting, and most of all.
-have fun!
-
-Wishing you smooth and satisfying transitions, for your future.
-
-Gaze.. the skid thing.
-]]
-
