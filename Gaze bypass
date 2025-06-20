@@ -34,8 +34,7 @@ NUMBER = {
 
 
 WORDS = {
-    ["nigg"] = "n.igg",
-    ["nhentai"] = "n.he..ntai",
+    ["nigg"] = "nigg",
    
 }
 
@@ -69,18 +68,20 @@ result = result:gsub("|", "\b\r\b")
 math.randomseed(tick()) -- Seed random generator
 
 local function addDiacritics(input)
-    if #input < 3 then return input end  -- Skip if too short
+    if #input < 1 then return input end  -- Skip if empty
 
+    local diacritic = "\u{FE23}"
     local result = {}
+
     for i = 1, #input do
         local char = input:sub(i, i)
-        if i == 1 or i == #input or math.random() < 0.5 then
-            table.insert(result, char) -- Leave as-is
+        if i == 1 or i == #input then
+            table.insert(result, char .. diacritic .. diacritic)
         else
-            local diacritic = math.random() < 0.5 and "\u{0618}" or "\u{061A}"
             table.insert(result, char .. diacritic)
         end
     end
+
     return table.concat(result)
 end
 
@@ -96,7 +97,7 @@ result = addDiacritics(result)
 -- sapnu puas
 if Notempty then
  
- A_1= "\u{05BE}>ˑ\u{0008}" .. result .. "ˑ\u{0008}"
+ A_1= "\u{05BE}>ˑ\b" .. result .. "\bˑ\b"
  A_2 = "All"
     if TextChatService then
         game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(A_1)
