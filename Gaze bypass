@@ -109,7 +109,7 @@ result = addDiacritics(result)
 -- sapnu puas
 if Notempty then
  
- A_1= "\u{05BE}>ˑ\b" .. result .. "\bˑ\b"
+ A_1= "ˑ\b" .. result 
  A_2 = "All"
     if TextChatService then
         game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(A_1)
