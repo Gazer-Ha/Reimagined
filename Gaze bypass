@@ -75,11 +75,9 @@ local function addDiacritics(input)
 
     for i = 1, #input do
         local char = input:sub(i, i)
-        if i == 1 or i == #input then
-            table.insert(result, char .. diacritic .. diacritic)
-        else
-            table.insert(result, char .. diacritic)
-        end
+        local count = math.random(1, 5)  -- Random amount of diacritics per character
+        local diacritics = string.rep(diacritic, count)
+        table.insert(result, char .. diacritics)
     end
 
     return table.concat(result)
