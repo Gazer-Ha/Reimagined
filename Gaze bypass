@@ -68,24 +68,30 @@ result = result:gsub("|", "\b\r\b")
 math.randomseed(tick()) -- Seed random generator
 
 local function addDiacritics(input)
-    if #input < 1 then return input end  -- Skip if empty
+    if #input < 1 then return input end
 
     local diacriticsList = {
-    "۫", "۪",
-}
+        "۫", "۪",
+    }
+
     local result = {}
 
     for i = 1, #input do
         local char = input:sub(i, i)
-        local count = math.random(1, 2)  -- 1 to 5 diacritics per character
-        local diacritics = {}
 
-        for j = 1, count do
-            local randDiacritic = diacriticsList[math.random(1, #diacriticsList)]
-            table.insert(diacritics, randDiacritic)
+        if char:match("%a") then  
+            local count = math.random(1, 2)
+            local diacritics = {}
+
+            for j = 1, count do
+                local randDiacritic = diacriticsList[math.random(1, #diacriticsList)]
+                table.insert(diacritics, randDiacritic)
+            end
+
+            table.insert(result, char .. table.concat(diacritics))
+        else
+            table.insert(result, char)  -- Leave non-letters unchanged
         end
-
-        table.insert(result, char .. table.concat(diacritics))
     end
 
     return table.concat(result)
