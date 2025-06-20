@@ -71,8 +71,7 @@ local function addDiacritics(input)
     if #input < 1 then return input end  -- Skip if empty
 
     local diacriticsList = {
-    "\u{FE24}", "\u{FE25}", "\u{FE26}",
-    "\u{FE2D}", "\u{FE2C}", "\u{FE2B}"
+    "ؘ", "ؙ", "ؚ",
 }
     local result = {}
 
