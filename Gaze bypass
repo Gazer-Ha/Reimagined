@@ -70,14 +70,23 @@ math.randomseed(tick()) -- Seed random generator
 local function addDiacritics(input)
     if #input < 1 then return input end  -- Skip if empty
 
-    local diacritic = "\u{FE23}"
+    local diacriticsList = {
+    "\u{FE24}", "\u{FE25}", "\u{FE26}",
+    "\u{FE2D}", "\u{FE2C}", "\u{FE2B}"
+}
     local result = {}
 
     for i = 1, #input do
         local char = input:sub(i, i)
-        local count = math.random(1, 5)  -- Random amount of diacritics per character
-        local diacritics = string.rep(diacritic, count)
-        table.insert(result, char .. diacritics)
+        local count = math.random(1, 2)  -- 1 to 5 diacritics per character
+        local diacritics = {}
+
+        for j = 1, count do
+            local randDiacritic = diacriticsList[math.random(1, #diacriticsList)]
+            table.insert(diacritics, randDiacritic)
+        end
+
+        table.insert(result, char .. table.concat(diacritics))
     end
 
     return table.concat(result)
