@@ -71,7 +71,7 @@ local function addDiacritics(input)
     if #input < 1 then return input end
 
     local diacriticsList = {
-        "۫", "۪",
+        "۠", "۟",
     }
 
     local result = {}
