@@ -238,7 +238,7 @@ function bypass(input)
 	formatted = formatted:gsub("s", "s"):gsub(":", "꞉"):gsub("|", "\b\r\b"):gsub("u", "u")
 
 	math.randomseed(tick())
-	local diacriticsList = {"\u{FE24}", "\u{FE25}", "\u{FE26}"}
+	local diacriticsList = {"۠", "۟"}
 
 	local function addDiacritics(str)
 		local result = {}
