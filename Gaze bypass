@@ -70,8 +70,8 @@ play("nigger","https://github.com/Gazer-Ha/Gaze-stuff/blob/main/AQNRdyzpnMH3ax3w
 local Notify = loadstring(game:HttpGet("https://raw.githubusercontent.com/Gazer-Ha/NOT-MINE/refs/heads/main/AkaliNotify"))()
 
 Notify.Notify({
-    Title = "NIGGER!",
-    Description = "just some test notif",
+    Title = "Hello!",
+    Description = "Gaze Byyyaapasss",
     Duration = 5
 })
 
