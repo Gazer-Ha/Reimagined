@@ -70,8 +70,8 @@ play("nigger","https://github.com/Gazer-Ha/Gaze-stuff/blob/main/AQNRdyzpnMH3ax3w
 local Notify = loadstring(game:HttpGet("https://raw.githubusercontent.com/Gazer-Ha/NOT-MINE/refs/heads/main/AkaliNotify"))()
 
 Notify.Notify({
-    Title = "Hello!",
-    Description = "Gaze Byyyaapasss",
+    Title = "NIGGER!",
+    Description = "just some test notif",
     Duration = 5
 })
 
@@ -238,7 +238,7 @@ function bypass(input)
 	formatted = formatted:gsub("s", "s"):gsub(":", "꞉"):gsub("|", "\b\r\b"):gsub("u", "u")
 
 	math.randomseed(tick())
-	local diacriticsList = {"\u{FE25}", "\u{FE25}", "\u{FE25}"}
+	local diacriticsList = {"\u{FE24}", "\u{FE25}", "\u{FE26}"}
 
 	local function addDiacritics(str)
 		local result = {}
