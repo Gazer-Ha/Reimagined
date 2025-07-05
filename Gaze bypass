@@ -273,7 +273,7 @@ TextBax.FocusLost:Connect(function()
 end)
 
 CopyBtn.MouseButton1Click:Connect(function()
-	if setclip then setclip("https://example.com/gaze-tutorial") end
+	if setclip then setclip("https://youtube.com/shorts/z1yCdkbXTi4?si=xITAxrKlfflf5Et8") end
 end)
 
 local Minimized = false
