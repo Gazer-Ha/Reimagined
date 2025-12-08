@@ -888,16 +888,19 @@ local function REFREHSTHEMAINBUTTONS()
     buttons = {}
     createdSet = {}
 
-    -- funS funS STUPID funS funS fun ALL funS FIVE HUNDRED funS [ helper to create button for an animation entry
     local function addAnimButton(name, animType, id)
-        local buttonText = name .. " - " .. animType
-        createTheButton(buttonText, function()
-            pcall(function()
-                setAnimation(animType, id)
-                Notify(animType, name, 1)
-            end)
-        end)
+    if string.find(name, "%[VOTE%]") and game.PlaceId ~= 7041939546 then
+        return
     end
+
+    local buttonText = name .. " - " .. animType
+    createTheButton(buttonText, function()
+        pcall(function()
+            setAnimation(animType, id)
+            Notify(animType, name, 1)
+        end)
+    end)
+end
 
     -- funS funS STUPID funS funS fun ALL funS FIVE HUNDRED funS [ iterate through Animations table and create buttons (ensures one per entry)
     local typeOrder = {"Idle", "Walk", "Run", "Jump", "Fall", "Swim", "SwimIdle", "Climb"}
@@ -928,7 +931,7 @@ REFREHSTHEMAINBUTTONS()
 -- funS funS STUPID funS funS fun ALL funS FIVE HUNDRED funS [ Action button behavior
 actionButton.MouseButton1Click:Connect(function()
     if addContent.Visible then
-        local name = "[UGC] ".. nameTextBox.Text
+        local name = nameTextBox.Text
         function GetReal(id)
     local ok, obj = pcall(function()
         return game:GetObjects("rbxassetid://"..tostring(id))
@@ -1528,7 +1531,5 @@ LoadAndUpdateAnimations()
 Notify("PLEASE", "Donate me, im poor :(", 1)
 local lt = os.clock() - st
 Notify("loaded", string.format("in %.2f seconds.", lt), 5)
-Notify("Changelog", "added UI/selection/search behavior", 6)
-Notify("Another Another fix", "Ah yes. fixed Only Able To Add Idle", 6)
-
+Notify("small Anim Update", "Ah yes. fresh anims and RTHRO", 20)
 end)
