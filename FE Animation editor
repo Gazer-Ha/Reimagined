@@ -1444,7 +1444,7 @@ local function LoadAndUpdateAnimations()
                 -- New animation found
                 Animations[animType][animName] = animData
                 newAnimationsFound = newAnimationsFound + 1
-                Notify("New Animation", "Added: " .. animName .. " (" .. animType .. ")", 2)
+                print("New Animation | " .. "Added: " .. animName .. " (" .. animType .. ")", 2)
             else
                 -- Check if data is actually different
                 local isDifferent = false
@@ -1487,7 +1487,7 @@ local function LoadAndUpdateAnimations()
     if newAnimationsFound > 0 or updatedAnimations > 0 then
         Notify("Database Update", 
             string.format("New: %d | Updated: %d", newAnimationsFound, updatedAnimations), 
-            1)
+            2)
     else
         Notify("Database", "All animations are up to date!", 3)
     end
