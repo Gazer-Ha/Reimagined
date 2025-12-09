@@ -164,40 +164,8 @@ local function fadeIn()
     end
 end
 
-local function movedFar()
-    local currentPos = frame.AbsolutePosition
-    local dx = math.abs(currentPos.X - startPos.X)
-    local dy = math.abs(currentPos.Y - startPos.Y)
-    return dx >= 20 or dy >= 20
-end
 
-frame.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        holding = true
-        startTime = os.clock()
-        startPos = frame.AbsolutePosition
-        while holding do
-            if movedFar() then
-                break
-            end
-            if os.clock() - startTime >= 3 then
-                if frame.BackgroundTransparency < 1 then
-                    fadeOut()
-                else
-                    fadeIn()
-                end
-                break
-            end
-            task.wait()
-        end
-    end
-end)
 
-frame.InputEnded:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        holding = false
-    end
-end)
 
 local labelSize = UDim2.new(1, 0, 0.1, 0)
 
@@ -1519,7 +1487,7 @@ local function LoadAndUpdateAnimations()
     if newAnimationsFound > 0 or updatedAnimations > 0 then
         Notify("Database Update", 
             string.format("New: %d | Updated: %d", newAnimationsFound, updatedAnimations), 
-            5)
+            1)
     else
         Notify("Database", "All animations are up to date!", 3)
     end
